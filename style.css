@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+/* font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif; */
+
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%); /* main background */
+  --dark-desaturated-blue: hsl(244, 38%, 16%); /*card background*/
+  --soft-violet: hsl(277, 64%, 61%); /* accent*/
+  --white: hsl(0, 0%, 100%); /*main heading, stats*/
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75); /*main paragraph*/
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.6); /*stat headings*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(233, 47%, 7%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+
+.container {
+  max-width: 1108px;
+  max-height: 440px;
+  position: relative;
+}
+
+/* .wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 102%;
+  background: url('design/img.png') center center;
+  opacity: 0.3;
+  z-index: 1;
+} */
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--dark-desaturated-blue);
+  color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.left {
+  padding: 4.4rem 4.3rem 4rem 4.3rem;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.2px;
+  margin-bottom: 1.9rem;
+  color: hsl(0, 0%, 100%);
+}
+
+h1 span {
+  color: var(--soft-violet);
+}
+
+p {
+  padding-right: 4rem;
+  font-size: 15px;
+  line-height: 1.6;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+.stats {
+  margin-top: 4.5rem;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 3.8rem;
+}
+
+.box {
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.box span {
+  display: block;
+  font-size: 23px;
+  text-transform: initial;
+  margin-bottom: 0.3rem;
+  color: hsl(0, 0%, 100%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.right {
+  position: relative;
+}
+
+.right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(277, 64%, 61%, 0.5);
+}
+
+.header-desktop {
+  display: block;
+  opacity: 40%;
+}
+.header-mobile {
+  display: none;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--soft-violet);
+}
+.attribution a:hover {
+  color: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90vw;
+    max-height: 100%;
+    position: relative;
+    padding: 10% 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-desaturated-blue);
+    color: #fff;
+  }
+
+  .left {
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 27px;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    padding: 0.7rem;
+    font-size: 14px;
+  }
+
+  .stats {
+    margin-top: 1.5rem;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .header-desktop {
+    display: none;
+  }
+  .header-mobile {
+    display: block;
+    max-width: 100%;
+    opacity: 0.4;
+  }
+}
